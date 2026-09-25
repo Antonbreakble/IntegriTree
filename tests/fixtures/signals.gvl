@@ -1,0 +1,10 @@
+{attribute 'qualified_only'}
+VAR_GLOBAL
+    {attribute 'symbol' := 'readwrite'}
+    AI_Signal : Plastic.AnalogInput; //Дальномер
+    {attribute 'symbol' := 'none'}
+    DI_Signal : Plastic.DigitalInput; //Резерв
+    DO_Signal : Plastic.DigitalOutput; //Привод
+    AO_Signal : Plastic.AnalogOutput; //Задание
+    SU_KV1 : Plastic.DigitalInput; //Имя без нужного префикса
+END_VAR

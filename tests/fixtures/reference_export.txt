@@ -1,0 +1,198 @@
+OperatorActions.Message,1,vt_ui2, 8
+OperatorActions.Trigger,11155,vt_ui2, 10
+OperatorActions.Trigger,11154,vt_ui2, 10
+OperatorActions.Trigger,11151,vt_bstr,@(#1.Message.Value)
+OperatorActions.Trigger,11150,vt_bstr,@(#1.Message.Value)
+OperatorActions.Trigger,11000,vt_ui4, 2147483744
+OperatorActions.Trigger,1,vt_ui2, 11
+AIs.AI_Signal.Events.Error,3000000,vt_bstr,(AIs.AI_Signal.Status & 1) != 0
+AIs.AI_Signal.Events.Error,11000,vt_ui4, 0
+AIs.AI_Signal.Events.Error,1,vt_ui2, 11
+AIs.AI_Signal.Events.HAlarm,3000000,vt_bstr,(AIs.AI_Signal.Status & 16) != 0
+AIs.AI_Signal.Events.HAlarm,7996,vt_bstr,1#1###-1#
+AIs.AI_Signal.Events.HAlarm,7997,vt_i4, 1
+AIs.AI_Signal.Events.HAlarm,11000,vt_ui4, 2147483744
+AIs.AI_Signal.Events.HAlarm,11150,vt_bstr,[Пришло] @(#2.Info.Description.Value) : Превышена верхняя предупредительная уставка
+AIs.AI_Signal.Events.HAlarm,11151,vt_bstr,[Ушло] @(#2.Info.Description.Value) : Превышена верхняя предупредительная уставка
+AIs.AI_Signal.Events.HAlarm,11154,vt_ui2, 500
+AIs.AI_Signal.Events.HAlarm,11155,vt_ui2, 500
+AIs.AI_Signal.Events.HAlarm,1,vt_ui2, 11
+AIs.AI_Signal.Events.HHAlarm,3000000,vt_bstr,(AIs.AI_Signal.Status & 8) != 0
+AIs.AI_Signal.Events.HHAlarm,7996,vt_bstr,1#1###-1#
+AIs.AI_Signal.Events.HHAlarm,7997,vt_i4, 1
+AIs.AI_Signal.Events.HHAlarm,11000,vt_ui4, 2147483744
+AIs.AI_Signal.Events.HHAlarm,11150,vt_bstr,[Пришло] @(#2.Info.Description.Value) : Превышена верхняя критическая уставка
+AIs.AI_Signal.Events.HHAlarm,11151,vt_bstr,[Ушло] @(#2.Info.Description.Value) : Превышена верхняя критическая уставка
+AIs.AI_Signal.Events.HHAlarm,11154,vt_ui2, 500
+AIs.AI_Signal.Events.HHAlarm,11155,vt_ui2, 500
+AIs.AI_Signal.Events.HHAlarm,1,vt_ui2, 11
+AIs.AI_Signal.Events.LAlarm,3000000,vt_bstr,(AIs.AI_Signal.Status & 32) != 0
+AIs.AI_Signal.Events.LAlarm,1,vt_ui2, 11
+AIs.AI_Signal.Events.LLAlarm,3000000,vt_bstr,(AIs.AI_Signal.Status & 64) != 0
+AIs.AI_Signal.Events.LLAlarm,1,vt_ui2, 11
+AIs.AI_Signal.Info.Channel,5,vt_ui4, 1
+AIs.AI_Signal.Info.Channel,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.Info.Channel
+AIs.AI_Signal.Info.Channel,7997,vt_i4, 1
+AIs.AI_Signal.Info.Channel,1,vt_ui2, 8
+AIs.AI_Signal.Info.Description,5,vt_ui4, 1
+AIs.AI_Signal.Info.Description,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.Info.Description
+AIs.AI_Signal.Info.Description,7997,vt_i4, 1
+AIs.AI_Signal.Info.Description,1,vt_ui2, 8
+AIs.AI_Signal.Info.Name,5,vt_ui4, 1
+AIs.AI_Signal.Info.Name,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.Info.Name
+AIs.AI_Signal.Info.Name,7997,vt_i4, 1
+AIs.AI_Signal.Info.Name,1,vt_ui2, 8
+AIs.AI_Signal.Info.Units,5,vt_ui4, 1
+AIs.AI_Signal.Info.Units,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.Info.Units
+AIs.AI_Signal.Info.Units,7997,vt_i4, 1
+AIs.AI_Signal.Info.Units,1,vt_ui2, 8
+AIs.AI_Signal.OUT.PV,5,vt_ui4, 1
+AIs.AI_Signal.OUT.PV,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.OUT.PV
+AIs.AI_Signal.OUT.PV,7997,vt_i4, 1
+AIs.AI_Signal.OUT.PV,1,vt_ui2, 4
+AIs.AI_Signal.OUT.Status,5,vt_ui4, 1
+AIs.AI_Signal.OUT.Status,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.OUT.Status
+AIs.AI_Signal.OUT.Status,7997,vt_i4, 1
+AIs.AI_Signal.OUT.Status,1,vt_ui2, 18
+AIs.AI_Signal.PAR.DeadbandRate,5,vt_ui4, 1
+AIs.AI_Signal.PAR.DeadbandRate,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.DeadbandRate
+AIs.AI_Signal.PAR.DeadbandRate,7997,vt_i4, 1
+AIs.AI_Signal.PAR.DeadbandRate,1,vt_ui2, 4
+AIs.AI_Signal.PAR.FiltrationRate,5,vt_ui4, 1
+AIs.AI_Signal.PAR.FiltrationRate,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.FiltrationRate
+AIs.AI_Signal.PAR.FiltrationRate,7997,vt_i4, 1
+AIs.AI_Signal.PAR.FiltrationRate,1,vt_ui2, 4
+AIs.AI_Signal.PAR.H,5,vt_ui4, 1
+AIs.AI_Signal.PAR.H,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.H
+AIs.AI_Signal.PAR.H,7997,vt_i4, 1
+AIs.AI_Signal.PAR.H,1,vt_ui2, 4
+AIs.AI_Signal.PAR.HH,5,vt_ui4, 1
+AIs.AI_Signal.PAR.HH,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.HH
+AIs.AI_Signal.PAR.HH,7997,vt_i4, 1
+AIs.AI_Signal.PAR.HH,1,vt_ui2, 4
+AIs.AI_Signal.PAR.L,5,vt_ui4, 1
+AIs.AI_Signal.PAR.L,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.L
+AIs.AI_Signal.PAR.L,7997,vt_i4, 1
+AIs.AI_Signal.PAR.L,1,vt_ui2, 4
+AIs.AI_Signal.PAR.LL,5,vt_ui4, 1
+AIs.AI_Signal.PAR.LL,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.LL
+AIs.AI_Signal.PAR.LL,7997,vt_i4, 1
+AIs.AI_Signal.PAR.LL,1,vt_ui2, 4
+AIs.AI_Signal.PAR.PvHigh,5,vt_ui4, 1
+AIs.AI_Signal.PAR.PvHigh,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.PvHigh
+AIs.AI_Signal.PAR.PvHigh,7997,vt_i4, 1
+AIs.AI_Signal.PAR.PvHigh,1,vt_ui2, 4
+AIs.AI_Signal.PAR.PvLow,5,vt_ui4, 1
+AIs.AI_Signal.PAR.PvLow,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.PvLow
+AIs.AI_Signal.PAR.PvLow,7997,vt_i4, 1
+AIs.AI_Signal.PAR.PvLow,1,vt_ui2, 4
+AIs.AI_Signal.PAR.PvShift,5,vt_ui4, 1
+AIs.AI_Signal.PAR.PvShift,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.PvShift
+AIs.AI_Signal.PAR.PvShift,7997,vt_i4, 1
+AIs.AI_Signal.PAR.PvShift,1,vt_ui2, 4
+AIs.AI_Signal.SET.DeadbandRate,5,vt_ui4, 2
+AIs.AI_Signal.SET.DeadbandRate,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.DeadbandRate
+AIs.AI_Signal.SET.DeadbandRate,7997,vt_i4, 2
+AIs.AI_Signal.SET.DeadbandRate,1,vt_ui2, 4
+AIs.AI_Signal.SET.FiltrationRate,5,vt_ui4, 2
+AIs.AI_Signal.SET.FiltrationRate,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.FiltrationRate
+AIs.AI_Signal.SET.FiltrationRate,7997,vt_i4, 2
+AIs.AI_Signal.SET.FiltrationRate,1,vt_ui2, 4
+AIs.AI_Signal.SET.H,5,vt_ui4, 2
+AIs.AI_Signal.SET.H,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.H
+AIs.AI_Signal.SET.H,7997,vt_i4, 2
+AIs.AI_Signal.SET.H,1,vt_ui2, 4
+AIs.AI_Signal.SET.HH,5,vt_ui4, 2
+AIs.AI_Signal.SET.HH,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.HH
+AIs.AI_Signal.SET.HH,7997,vt_i4, 2
+AIs.AI_Signal.SET.HH,1,vt_ui2, 4
+AIs.AI_Signal.SET.L,5,vt_ui4, 2
+AIs.AI_Signal.SET.L,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.L
+AIs.AI_Signal.SET.L,7997,vt_i4, 2
+AIs.AI_Signal.SET.L,1,vt_ui2, 4
+AIs.AI_Signal.SET.LL,5,vt_ui4, 2
+AIs.AI_Signal.SET.LL,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.LL
+AIs.AI_Signal.SET.LL,7997,vt_i4, 2
+AIs.AI_Signal.SET.LL,1,vt_ui2, 4
+AIs.AI_Signal.SET.PvHigh,5,vt_ui4, 2
+AIs.AI_Signal.SET.PvHigh,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.PvHigh
+AIs.AI_Signal.SET.PvHigh,7997,vt_i4, 2
+AIs.AI_Signal.SET.PvHigh,1,vt_ui2, 4
+AIs.AI_Signal.SET.PvLow,5,vt_ui4, 2
+AIs.AI_Signal.SET.PvLow,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.PvLow
+AIs.AI_Signal.SET.PvLow,7997,vt_i4, 2
+AIs.AI_Signal.SET.PvLow,1,vt_ui2, 4
+AIs.AI_Signal.SET.PvShift,5,vt_ui4, 2
+AIs.AI_Signal.SET.PvShift,7996,vt_bstr,1#1###-1#NS2|String|Application.AIs.AI_Signal.PAR.PvShift
+AIs.AI_Signal.SET.PvShift,7997,vt_i4, 2
+AIs.AI_Signal.SET.PvShift,1,vt_ui2, 4
+DIs.DI_Signal.OUT.PV,11155,vt_ui2, 500
+DIs.DI_Signal.OUT.PV,11154,vt_ui2, 500
+DIs.DI_Signal.OUT.PV,11151,vt_bstr,@(#2.Info.Description): False
+DIs.DI_Signal.OUT.PV,11150,vt_bstr,@(#2.Info.Description): True
+DIs.DI_Signal.OUT.PV,11000,vt_ui4, 2147483744
+DIs.DI_Signal.OUT.PV,5,vt_ui4, 1
+DIs.DI_Signal.OUT.PV,7996,vt_bstr,1#1###-1#NS2|String|Application.DIs.DI_Signal.OUT.PV
+DIs.DI_Signal.OUT.PV,7997,vt_i4, 1
+DIs.DI_Signal.OUT.PV,1,vt_ui2, 11
+DIs.DI_Signal.OUT.Error,5,vt_ui4, 1
+DIs.DI_Signal.OUT.Error,7996,vt_bstr,1#1###-1#NS2|String|Application.DIs.DI_Signal.OUT.Error
+DIs.DI_Signal.OUT.Error,7997,vt_i4, 1
+DIs.DI_Signal.OUT.Error,1,vt_ui2, 11
+DIs.DI_Signal.Info.Channel,7996,vt_bstr,1#1###-1#NS2|String|Application.DIs.DI_Signal.Info.Channel
+DIs.DI_Signal.Info.Channel,5,vt_ui4, 1
+DIs.DI_Signal.Info.Channel,7997,vt_i4, 1
+DIs.DI_Signal.Info.Channel,1,vt_ui2, 8
+DIs.DI_Signal.Info.Description,7996,vt_bstr,1#1###-1#NS2|String|Application.DIs.DI_Signal.Info.Description
+DIs.DI_Signal.Info.Description,5,vt_ui4, 1
+DIs.DI_Signal.Info.Description,7997,vt_i4, 1
+DIs.DI_Signal.Info.Description,1,vt_ui2, 8
+DIs.DI_Signal.Info.Name,7996,vt_bstr,1#1###-1#NS2|String|Application.DIs.DI_Signal.Info.Name
+DIs.DI_Signal.Info.Name,5,vt_ui4, 1
+DIs.DI_Signal.Info.Name,7997,vt_i4, 1
+DIs.DI_Signal.Info.Name,1,vt_ui2, 8
+DOs.DO_Signal.Info.Channel,7996,vt_bstr,1#1###-1#NS2|String|Application.DOs.DO_Signal.Info.Channel
+DOs.DO_Signal.Info.Channel,5,vt_ui4, 1
+DOs.DO_Signal.Info.Channel,7997,vt_i4, 1
+DOs.DO_Signal.Info.Channel,1,vt_ui2, 8
+DOs.DO_Signal.Info.Description,7996,vt_bstr,1#1###-1#NS2|String|Application.DOs.DO_Signal.Info.Description
+DOs.DO_Signal.Info.Description,5,vt_ui4, 1
+DOs.DO_Signal.Info.Description,7997,vt_i4, 1
+DOs.DO_Signal.Info.Description,1,vt_ui2, 8
+DOs.DO_Signal.Info.Name,7996,vt_bstr,1#1###-1#NS2|String|Application.DOs.DO_Signal.Info.Name
+DOs.DO_Signal.Info.Name,5,vt_ui4, 1
+DOs.DO_Signal.Info.Name,7997,vt_i4, 1
+DOs.DO_Signal.Info.Name,1,vt_ui2, 8
+DOs.DO_Signal.OUT.PV,11151,vt_bstr,@(#2.Info.Description): False
+DOs.DO_Signal.OUT.PV,11150,vt_bstr,@(#2.Info.Description): True
+DOs.DO_Signal.OUT.PV,11155,vt_ui2, 500
+DOs.DO_Signal.OUT.PV,11154,vt_ui2, 500
+DOs.DO_Signal.OUT.PV,11000,vt_ui4, 2147483744
+DOs.DO_Signal.OUT.PV,7996,vt_bstr,1#1###-1#NS2|String|Application.DOs.DO_Signal.OUT.PV
+DOs.DO_Signal.OUT.PV,5,vt_ui4, 1
+DOs.DO_Signal.OUT.PV,7997,vt_i4, 1
+DOs.DO_Signal.OUT.PV,1,vt_ui2, 11
+AOs.AO_Signal.OUT.PV,7996,vt_bstr,1#1###-1#NS2|String|Application.AOs.AO_Signal.OUT.PV
+AOs.AO_Signal.OUT.PV,5,vt_ui4, 1
+AOs.AO_Signal.OUT.PV,7997,vt_i4, 1
+AOs.AO_Signal.OUT.PV,1,vt_ui2, 4
+AOs.AO_Signal.OUT.Status,7996,vt_bstr,1#1###-1#NS2|String|Application.AOs.AO_Signal.OUT.Status
+AOs.AO_Signal.OUT.Status,5,vt_ui4, 1
+AOs.AO_Signal.OUT.Status,7997,vt_i4, 1
+AOs.AO_Signal.OUT.Status,1,vt_ui2, 18
+AOs.AO_Signal.Info.Channel,7996,vt_bstr,1#1###-1#NS2|String|Application.AOs.AO_Signal.Info.Channel
+AOs.AO_Signal.Info.Channel,5,vt_ui4, 1
+AOs.AO_Signal.Info.Channel,7997,vt_i4, 1
+AOs.AO_Signal.Info.Channel,1,vt_ui2, 8
+AOs.AO_Signal.Info.Description,7996,vt_bstr,1#1###-1#NS2|String|Application.AOs.AO_Signal.Info.Description
+AOs.AO_Signal.Info.Description,5,vt_ui4, 1
+AOs.AO_Signal.Info.Description,7997,vt_i4, 1
+AOs.AO_Signal.Info.Description,1,vt_ui2, 8
+AOs.AO_Signal.Info.Name,7996,vt_bstr,1#1###-1#NS2|String|Application.AOs.AO_Signal.Info.Name
+AOs.AO_Signal.Info.Name,5,vt_ui4, 1
+AOs.AO_Signal.Info.Name,7997,vt_i4, 1
+AOs.AO_Signal.Info.Name,1,vt_ui2, 8
+AOs.AO_Signal.Info.Units,7996,vt_bstr,1#1###-1#NS2|String|Application.AOs.AO_Signal.Info.Units
+AOs.AO_Signal.Info.Units,5,vt_ui4, 1
+AOs.AO_Signal.Info.Units,7997,vt_i4, 1
+AOs.AO_Signal.Info.Units,1,vt_ui2, 8

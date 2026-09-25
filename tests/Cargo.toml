@@ -1,0 +1,21 @@
+[package]
+name = "integritree-tests"
+version = "0.1.0"
+edition.workspace = true
+publish = false
+
+[dependencies]
+integritree-core = { path = "../source/core" }
+integritree-cli = { path = "../source/cli" }
+
+[[test]]
+name = "parser"
+path = "core/parser.rs"
+
+[[test]]
+name = "generation"
+path = "core/generation.rs"
+
+[[test]]
+name = "commands"
+path = "cli/commands.rs"
