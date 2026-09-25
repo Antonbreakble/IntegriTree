@@ -22,7 +22,7 @@ impl TagProperty {
             TagProperty::AccessMode(direction) => (5, PropertyValue::vt_ui4(direction.code())),
             TagProperty::OpcStringConnection(source) => (7996, PropertyValue::vt_bstr(source.serialize())),
             TagProperty::ReadWriteDefinition(direction) => (7997, PropertyValue::vt_i4(direction.code() as i32)),
-            TagProperty::DataType(tagDataType) => (1, PropertyValue::vt_ui2(tagDataType.code())),
+            TagProperty::DataType(tag_data_type) => (1, PropertyValue::vt_ui2(tag_data_type.code())),
             TagProperty::Formula(value) => (3_000_000, PropertyValue::vt_bstr(value.clone())),
             TagProperty::EventDefinition(value) => (11000, PropertyValue::vt_ui4(*value)),
             TagProperty::EventOnMessage(message) => (11150, PropertyValue::vt_bstr(message.clone())),
