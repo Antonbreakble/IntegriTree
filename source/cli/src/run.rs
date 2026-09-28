@@ -1,6 +1,6 @@
 use crate::project::find_opc_config;
 use crate::{files::list_files, Args};
-use integritree_core::{export, generate, parse_gvl, OpcConfig, Signal, parse_opc_connection};
+use integritree_core::{export, generate, parse_gvl, OpcConfig, Signal, parse_opc_connection, OpcServerProfile};
 use std::error::Error;
 use std::fs;
 
@@ -51,7 +51,14 @@ pub fn run(args: Args) -> Result<String, Box<dyn Error>> {
 
 
     // 3. Генерация и запись.
-    let opc = OpcConfig::new(connection);
+    let profile = match (args.regul, args.codesys){
+        (true, false) => OpcServerProfile::Regul,
+        (false, true) => OpcServerProfile::Codesys,
+        _ => return Err("укажите ровно один флаг: --regul или --codesys".into()),
+    };
+
+    let opc = OpcConfig::for_profile(connection, profile);
+
     let tags = generate(&signals, &opc)?;
     let content = export(&tags);
 

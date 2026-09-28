@@ -9,20 +9,34 @@ use crate::{IntegritreeError, Signal, SignalKind, Tag};
 use crate::opc_config::OpcConnection;
 use crate::tag::opc::{OpcDirection, OpcSource};
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub enum OpcServerProfile {
+    Regul,
+    Codesys,
+}
 #[derive(Debug, Clone)]
 pub struct OpcConfig {
     pub connection: OpcConnection,
     pub namespace: u16,
-    pub application: String,
+    pub node_prefix: String,
     pub data_type: String,
 }
 
 impl OpcConfig {
     pub fn new(connection: OpcConnection) -> Self {
-        Self {
+        Self::for_profile(connection, OpcServerProfile::Regul)
+    }
+
+    pub fn for_profile(connection: OpcConnection, profile: OpcServerProfile) -> Self {
+        let (namespace, node_prefix) = match profile {
+            OpcServerProfile::Regul => (2, "Application"),
+            OpcServerProfile::Codesys => (4, "|var|CODESYS Control Win V3 x64.Application")
+        };
+
+        Self{
             connection,
-            namespace: 2,
-            application: "Application".into(),
+            namespace,
+            node_prefix: node_prefix.into(),
             data_type: "String".into(),
         }
     }
@@ -32,24 +46,13 @@ pub fn generate(
     signals: &[Signal],
     opc: &OpcConfig,
 ) -> Result<Vec<Tag>, IntegritreeError> {
-    if opc.application.is_empty()
-        || !opc.application.chars().all(|ch| {
-        ch.is_ascii_alphanumeric() || ch == '_' || ch == '.'
-    })
-    {
-        return Err(IntegritreeError(
-            "некорректный корень OPC-пути".into()
+    if opc.node_prefix.is_empty() {
+        return Err(IntegritreeError("некорректный корень OPC-пути".into()
         ));
     }
 
-    if opc.data_type.is_empty()
-        || opc.data_type.chars().any(|ch| {
-        matches!(ch, '|' | ',' | '\n' | '\r')
-    })
-    {
-        return Err(IntegritreeError(
-            "некорректный тип OPC-источника".into()
-        ));
+    if opc.data_type.is_empty() {
+        return Err(IntegritreeError("некорректный тип OPC-источника".into()));
     }
 
     let mut tags = Vec::new();
@@ -93,7 +96,7 @@ fn source(
         data_type: opc.data_type.clone(),
         node_id: format!(
             "{}.{}.{}.{}",
-            opc.application,
+            opc.node_prefix,
             signal.kind.group(),
             signal.name,
             suffix,

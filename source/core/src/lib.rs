@@ -11,7 +11,7 @@ mod opc_config;
 
 pub use error::IntegritreeError;
 pub use export::export;
-pub use generator::{generate, OpcConfig};
+pub use generator::{generate, OpcConfig, OpcServerProfile};
 pub use parser::parse_gvl;
 pub use signal::{Signal, SignalKind};
 pub use tag::{Tag};

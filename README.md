@@ -24,8 +24,13 @@ END_VAR
 
 Скачайте `integritree.exe` на странице [Releases](https://github.com/Antonbreakble/IntegriTree/releases) и выполните:
 
+| Флаг | Namespace index | Префикс строкового NodeId |
+| --- | ---: | --- |
+| `--regul` | 2 | `Application` |
+| `--codesys` | 4 | \|var\|CODESYS Control Win V3 x64.Application |
+
 ```powershell
-.\integritree.exe --project_dir "C:\Project" --signal_dir "C:\Signals" --out "C:\Result\signals.csv"
+.\integritree.exe --project_dir "C:\Project" --signal_dir "C:\Signals" --out "C:\Result\signals.csv" --codesys
 ```
 
 Программа обработает файлы из папки сигналов и запишет результат в `signals.csv`.
