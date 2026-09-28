@@ -1,38 +1,47 @@
-use clap::{ArgGroup, Parser};
+use clap::{ArgAction, ArgGroup, Parser};
 use std::path::PathBuf;
 
 #[derive(Debug, Parser)]
 #[command(
     name = "integritree",
+    version,
     about = "Генератор дерева тегов IntegritySCADA",
+    disable_help_flag = true,
+    disable_version_flag = true,
+    help_template = "IntegriTree {version}\n{about}\n\nИспользование: {usage}\n\nПараметры:\n{options}\n{after-help}",
+    after_help = "Примеры:\n  integritree.exe --regul --project_dir C:\\Project --signal_dir C:\\Signals --out C:\\Result\\tags.csv\n  integritree.exe --codesys --project_dir C:\\Project --signal_dir C:\\Signals --out C:\\Result\\tags.csv",
     group(
         ArgGroup::new("opc_server")
-                    .required(true)
-                    .args(["regul", "codesys"])
-        )
+            .required(true)
+            .args(["regul", "codesys"])
+    )
 )]
-
-
-
 pub struct Args {
-
-    /// OPC UA сервер Регул
+    /// OPC UA сервер Регул (ns=2, Application)
     #[arg(long)]
     pub regul: bool,
 
-    /// OPC UA сервер CODESYS Control Win V3 x64
+    /// OPC UA сервер CODESYS Control Win V3 x64 (ns=4)
     #[arg(long)]
     pub codesys: bool,
 
     /// Папка проекта IntegritySCADA
-    #[arg(long = "project_dir", value_name = "DIR")]
+    #[arg(long = "project_dir", value_name = "ПАПКА")]
     pub project_dir: PathBuf,
 
     /// Папка с файлами сигналов
-    #[arg(long = "signal_dir", value_name = "DIR")]
+    #[arg(long = "signal_dir", value_name = "ПАПКА")]
     pub signal_dir: PathBuf,
 
     /// Файл для записи результата
-    #[arg(long = "out", value_name = "FILE")]
+    #[arg(long = "out", value_name = "ФАЙЛ")]
     pub out: PathBuf,
+
+    /// Показать справку
+    #[arg(short = 'h', long, action = ArgAction::Help)]
+    pub help: bool,
+
+    /// Показать версию
+    #[arg(short = 'V', long, action = ArgAction::Version)]
+    pub version: bool,
 }
