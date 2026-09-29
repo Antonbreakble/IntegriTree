@@ -36,12 +36,5 @@ pub struct Args {
     /// Файл для записи результата
     #[arg(long = "out", value_name = "ФАЙЛ")]
     pub out: PathBuf,
-
-    /// Показать справку
-    #[arg(short = 'h', long, action = ArgAction::Help)]
-    pub help: bool,
-
-    /// Показать версию
-    #[arg(short = 'V', long, action = ArgAction::Version)]
-    pub version: bool,
+    
 }
