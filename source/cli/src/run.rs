@@ -51,10 +51,11 @@ pub fn run(args: Args) -> Result<String, Box<dyn Error>> {
 
 
     // 3. Генерация и запись.
-    let profile = match (args.regul, args.codesys){
-        (true, false) => OpcServerProfile::Regul,
-        (false, true) => OpcServerProfile::Codesys,
-        _ => return Err("укажите ровно один флаг: --regul или --codesys".into()),
+    let profile = match (args.regul, args.codesys, args.elisy) {
+        (true, false, false) => OpcServerProfile::Regul,
+        (false, true, false) => OpcServerProfile::Codesys,
+        (false, false, true) => OpcServerProfile::Elisy,
+        _ => return Err("укажите ровно один флаг: --regul, --codesys или --elisy".into()),
     };
 
     let opc = OpcConfig::for_profile(connection, profile);

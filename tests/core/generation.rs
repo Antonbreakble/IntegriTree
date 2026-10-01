@@ -23,6 +23,10 @@ fn opc_profiles_generate_expected_node_ids() {
             OpcServerProfile::Codesys,
             "NS4|String||var|CODESYS Control Win V3 x64.Application.AIs.AI_Signal.OUT.PV",
         ),
+        (
+            OpcServerProfile::Elisy,
+            "NS4|String||var|ELSYMA.Application.AIs.AI_Signal.OUT.PV",
+        ),
     ] {
         let config = OpcConfig::for_profile(connection, profile);
         let csv = export(&generate(&signals, &config).unwrap());

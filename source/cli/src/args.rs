@@ -13,7 +13,7 @@ use std::path::PathBuf;
     group(
         ArgGroup::new("opc_server")
             .required(true)
-            .args(["regul", "codesys"])
+            .args(["regul", "codesys", "elisy"])
     )
 )]
 pub struct Args {
@@ -24,6 +24,10 @@ pub struct Args {
     /// OPC UA сервер CODESYS Control Win V3 x64 (ns=4)
     #[arg(long)]
     pub codesys: bool,
+
+    /// OPC UA сервер ELSYMA (ns=4, |var|ELSYMA.Application)
+    #[arg(long)]
+    pub elisy: bool,
 
     /// Папка проекта IntegritySCADA
     #[arg(long = "project_dir", value_name = "ПАПКА")]

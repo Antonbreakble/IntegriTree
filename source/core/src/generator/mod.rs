@@ -13,6 +13,7 @@ use crate::tag::opc::{OpcDirection, OpcSource};
 pub enum OpcServerProfile {
     Regul,
     Codesys,
+    Elisy,
 }
 #[derive(Debug, Clone)]
 pub struct OpcConfig {
@@ -30,7 +31,8 @@ impl OpcConfig {
     pub fn for_profile(connection: OpcConnection, profile: OpcServerProfile) -> Self {
         let (namespace, node_prefix) = match profile {
             OpcServerProfile::Regul => (2, "Application"),
-            OpcServerProfile::Codesys => (4, "|var|CODESYS Control Win V3 x64.Application")
+            OpcServerProfile::Codesys => (4, "|var|CODESYS Control Win V3 x64.Application"),
+            OpcServerProfile::Elisy => (4, "|var|ELSYMA.Application")
         };
 
         Self{
